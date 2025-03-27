@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate, replace } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -29,7 +29,7 @@ export const Navbar = () => {
   };
 
   const handleLogout = () => {
-    navigate("/login");
+    navigate("/auth/login", { replace: true });
   };
 
   return (
