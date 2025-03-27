@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink, Link, useNavigate, replace } from "react-router-dom";
 import {
   AppBar,
@@ -11,6 +11,7 @@ import {
   IconButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { AuthContext } from "../../auth/context/AuthContext";
 
 {
   /* 
@@ -22,6 +23,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const { authState } = useContext(AuthContext);
+  const { user } = authState; 
+  
   const navigate = useNavigate();
 
   const toggleDrawer = () => {
@@ -107,7 +111,7 @@ export const Navbar = () => {
             variant="h6"
             sx={{ fontWeight: "bold", color: "#ffcc00" }}
           >
-            Maite Pérez
+            {user?.userName}
           </Typography>
           <Divider
             orientation="vertical"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Box,
   TextField,
@@ -8,14 +8,17 @@ import {
   Link,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    login("Maite PV");
     navigate("/");
   };
 
