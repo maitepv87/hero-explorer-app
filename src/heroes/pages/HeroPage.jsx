@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useMemo } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   Typography,
@@ -16,23 +15,12 @@ import SupervisedUserCircle from "@mui/icons-material/SupervisedUserCircle";
 import { getHeroById } from "../helpers";
 
 export const HeroPage = () => {
-  // const { id } = useParams(); // Obtener el id del héroe desde la URL
-  const [hero, setHero] = useState(null);
-  // const navigate = useNavigate();
+  const { id } = useParams(); // Get the parameter from the URL
 
-  const id = "dc-batman";
-
-  useEffect(() => {
-    const heroData = getHeroById(id);
-    setHero(heroData);
-  }, [id]);
-
-  // const handleNavigateBack = () => {
-  //   navigate(-1); // Regresar a la página anterior
-  // };
+  const hero = useMemo(() => getHeroById(id), [id]);
 
   if (!hero) {
-    return <Typography>Loading...</Typography>;
+    return <Navigate to="/home" />;
   }
 
   return (

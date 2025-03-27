@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useMemo } from "react";
 import { Grid } from "@mui/material";
 import { HeroCard } from "../components";
 import { getHeroesByPublisher } from "../helpers";
 
 export const HeroList = ({ publisher }) => {
-  const [heroes, setHeroes] = useState([]);
-
-  useEffect(() => {
-    const fetchHeroes = async () => {
-      const heroesData = await getHeroesByPublisher(publisher);
-      setHeroes(heroesData);
-    };
-
-    fetchHeroes();
-  }, [publisher]);
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
 
   return (
     <Grid container spacing={3}>
