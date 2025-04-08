@@ -1,12 +1,18 @@
-# React + Vite
+# HeroExplorer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **HeroExplorer App** is a web application built with **React**, **Vite**, and **Material UI**. The main goal of this application is to practice the use of **React Router v6**, **Context**, and **useReducer** in developing a **Single Page Application (SPA)**. The app uses local data and stores the logged-in user information in the browser's local storage.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Single Page Application (SPA)**: Smooth navigation without page reloads.
+- **React Router v6**: Navigation between views using routes.
+- **Context and useReducer**: Global state management.
+- **Local Storage**: The app maintains the logged-in user's session.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: JavaScript library for building interactive user interfaces.
+- **Vite**: Fast build tool for React applications.
+- **Material UI**: UI component framework for consistent and attractive design.
+
+

@@ -15,7 +15,13 @@ const CharactersByHero = ({ alter_ego, characters }) => {
 
 export const HeroCard = ({ hero }) => {
   return (
-    <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+      }}
+    >
       <CardActionArea component={Link} to={`/hero/${hero.id}`}>
         <CardMedia
           component="div"
@@ -25,12 +31,15 @@ export const HeroCard = ({ hero }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            "@media (max-width: 600px)": {
+              height: 150,
+            },
           }}
         >
           <SupervisedUserCircle sx={{ fontSize: 80, color: "#7a8fa3" }} />
         </CardMedia>
 
-        <CardContent>
+        <CardContent sx={{ padding: "8px" }}>
           <Typography variant="h6" gutterBottom>
             {hero.superhero}
           </Typography>

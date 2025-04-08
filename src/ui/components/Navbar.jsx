@@ -23,9 +23,9 @@ import { AuthContext } from "../../auth/context/AuthContext";
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const { authState } = useContext(AuthContext);
-  const { user } = authState; 
-  
+  const { authState, logout } = useContext(AuthContext);
+  const { user } = authState;
+
   const navigate = useNavigate();
 
   const toggleDrawer = () => {
@@ -33,6 +33,7 @@ export const Navbar = () => {
   };
 
   const handleLogout = () => {
+    logout();
     navigate("/auth/login", { replace: true });
   };
 
@@ -189,7 +190,7 @@ export const Navbar = () => {
                   textOverflow: "ellipsis",
                 }}
               >
-                Maite Pérez
+                {user?.userName}
               </Typography>
               <Divider
                 orientation="vertical"

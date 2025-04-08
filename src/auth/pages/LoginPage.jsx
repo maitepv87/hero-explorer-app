@@ -18,8 +18,12 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    const lastPath = localStorage.getItem("lastPath") || "/";
+
     login("Maite PV");
-    navigate("/");
+    navigate(lastPath, {
+      replace: true,
+    });
   };
 
   return (

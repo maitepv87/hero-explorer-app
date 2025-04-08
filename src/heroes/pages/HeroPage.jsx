@@ -25,18 +25,29 @@ export const HeroPage = () => {
 
   return (
     <Box sx={{ my: 5, px: 3 }}>
-      <Card sx={{ display: "flex", gap: 3 }}>
+      <Card
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 3,
+          "@media (max-width: 600px)": {
+            padding: 1,
+          },
+        }}
+      >
         <CardMedia
           component="div"
           sx={{
             backgroundColor: "lightgrey",
-            height: 300,
+            height: { xs: 200, sm: 300 },
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <SupervisedUserCircle sx={{ fontSize: 250, color: "#7a8fa3" }} />
+          <SupervisedUserCircle
+            sx={{ fontSize: { xs: 150, sm: 250 }, color: "#7a8fa3" }}
+          />
         </CardMedia>
 
         <CardContent sx={{ flex: 1 }}>
@@ -64,14 +75,6 @@ export const HeroPage = () => {
             Characters
           </Typography>
           <Typography>{hero.characters}</Typography>
-
-          {/* <Button
-            variant="outlined"
-            sx={{ marginTop: 2 }}
-            onClick={handleNavigateBack}
-          >
-            Back
-          </Button> */}
         </CardContent>
       </Card>
     </Box>
