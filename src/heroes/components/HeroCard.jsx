@@ -16,7 +16,7 @@ const CharactersByHero = ({ alter_ego, characters }) => {
 export const HeroCard = ({ hero }) => {
   return (
     <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <CardActionArea component={Link} to={`/hero/dc-superman`}>
+      <CardActionArea component={Link} to={`/hero/${hero.id}`}>
         <CardMedia
           component="div"
           sx={{
