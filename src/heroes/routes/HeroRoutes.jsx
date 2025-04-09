@@ -13,8 +13,11 @@ export const HeroRoutes = () => {
         <Route path="dc" element={<DcPage />} />
         <Route path="hero/:id" element={<HeroPage />} />
 
-        <Route path="/" element={<Navigate to="home" />} />
+        {/* Start path */}
         <Route path="home" element={<HomePage />} />
+
+        {/* If the route is not valid within HeroRoutes, redirect to /home */}
+        <Route path="*" element={<Navigate to="home" />} />
       </Routes>
     </>
   );

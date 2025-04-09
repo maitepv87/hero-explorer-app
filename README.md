@@ -22,5 +22,3 @@ Before running this project, make sure you have the following installed:
 
 - **Node.js** (v18 or later recommended) – [Download here](https://nodejs.org/)
 - **npm** or **yarn** – A package manager for managing project dependencies
-- **React Router** – For routing and navigation between different pages in the app
-- **Material UI** – For UI components and styling
