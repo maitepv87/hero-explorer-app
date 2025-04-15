@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Box,
   TextField,
@@ -7,7 +9,6 @@ import {
   Container,
   Link,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
@@ -83,14 +84,17 @@ export const LoginPage = () => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "flex-end",
             marginTop: 2,
           }}
         >
-          <Link href="#" variant="body2" sx={{ fontSize: "0.875rem" }}>
-            Forgot password?
-          </Link>
-          <Link href="#" variant="body2" sx={{ fontSize: "0.875rem" }}>
+          <Link
+            component={RouterLink}
+            to="/auth/register"
+            href="#"
+            variant="body2"
+            sx={{ fontSize: "0.875rem" }}
+          >
             Don't have an account? Register
           </Link>
         </Box>
